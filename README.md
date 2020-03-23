@@ -13,12 +13,12 @@ Use command: git clone https://github.com/irina08/ios_Appium or download folder
 2.  You need to have in your testing environment already installed  
 XCode, Appium, Java, Maven, simulator according properties in the config.properties file.  
 
-In this project I use PageObject Pattern with Page Factory.  
-For assertion library - TestNG.   
+3.  In this project I use PageObject Pattern with Page Factory. For assertion library - TestNG.   
 [Appium Installation](https://appium.io/)
 
-3.  Provide or change properties in the config.properties file.  
-4.  Run tests: mvn clean install 
+4.  Provide or change properties in the config.properties file.  
+
+5.  Run tests: mvn clean install 
 
 ### Test Cases:
 Login Page:  
