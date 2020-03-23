@@ -45,9 +45,10 @@ public class AppStart {
 
 		URL url = new URL(appConfig.getAppiumServer());
 
-		desiredCapabilities.setCapability(Constants.AUTOMATION_NAME, Constants.AUTOMATION_VALUE);
-		driver = new IOSDriver<MobileElement>(url, desiredCapabilities);
-		
+		if (appConfig.getPlatformName().equalsIgnoreCase(Constants.IOS_PLATFORM_NAME)) {
+		    desiredCapabilities.setCapability(Constants.AUTOMATION_NAME, Constants.AUTOMATION_VALUE);
+		    driver = new IOSDriver<MobileElement>(url, desiredCapabilities);
+		}
 		driver.manage().timeouts().implicitlyWait(Long.valueOf(appConfig.getTimeout()), TimeUnit.SECONDS);
 
 		return driver;
