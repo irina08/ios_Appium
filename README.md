@@ -1,9 +1,8 @@
 # ios_Appium
 
 Those tests run perfect on simulator iPhone X 12.0.  
-For running test on Android we need to modify some files:  
-config.properties, and modify AppStart.java file, and setup environment for  
- Android Simulator.
+For running test on Android we need to modify some files: config.properties,  
+and modify AppStart.java file, and setup environment for Android Simulator.
 
 ### How to run project
 1.  You need to clone this repo to your local machine.  
@@ -12,7 +11,7 @@ you want the cloned directory to be made.
 Use command: git clone https://github.com/irina08/ios_Appium or download folder
 
 2.  You need to have in your testing environment already installed  
-XCode, Appium, Java, Maven, simulator according properties in the config file.  
+XCode, Appium, Java, Maven, simulator according properties in the config.properties file.  
 
 In this project I use PageObject Pattern with Page Factory.  
 For assertion library - TestNG.   
@@ -46,4 +45,3 @@ If our app has thousand of clients, we need to test app not only with simulator,
 but with real devices too. We need to test all positive functional users scenarios,  
 negative functional users scenarios, UI testing. Also we need to do performance  
 testing (stress and load) and security testing. 
-Security testing.
