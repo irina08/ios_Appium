@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="iOS Appium Suite">
+
+	<test name="iOSAppiumTests">
+		<classes>
+			<class name="appium.tests.LoginTests" />
+			<class name="appium.tests.MerakiDemoTests" />
+		</classes>
+	</test>
+</suite>
