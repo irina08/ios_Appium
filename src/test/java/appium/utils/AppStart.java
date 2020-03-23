@@ -64,20 +64,19 @@ public class AppStart {
 	InputStream input = null;
 	Properties properties = new Properties();
 	try {
-		input = new FileInputStream(file);
-		properties.load(input);
+	    input = new FileInputStream(file);
+	    properties.load(input);
 	} catch (IOException e) {
-		e.printStackTrace();		
+	    e.printStackTrace();		
 	} finally {
-		if (input != null) {
-			try {
-				input.close();
-			} catch (IOException e) {
-				e.printStackTrace();	
-			}
+	    if (input != null) {
+		try {
+		    input.close();
+		} catch (IOException e) {
+		    e.printStackTrace();	
 		}
+	    }
 	}
-	return properties;
+       return properties;
     }
-
 }
