@@ -2,7 +2,8 @@
 
 Those tests run perfect on simulator iPhone X 12.0.  
 For running test on Android we need to modify some files:  
-config.properties, and modify AppStart.java file.
+config.properties, and modify AppStart.java file, and setup environment for  
+ Android Simulator.
 
 ### How to run project
 1.  You need to clone this repo to your local machine.  
