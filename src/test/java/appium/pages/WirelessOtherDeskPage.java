@@ -11,6 +11,12 @@ public class WirelessOtherDeskPage {
 
 	AppiumDriver<MobileElement> driver;
 
+	public String WR_OTHER_DESK_HEADING = "Wireless other desk";
+	public String WR_OTHER_DESK_MODEL = "MR34";
+	public String WR_OTHER_DESK_SERIAL = "Q2FD-TR63-PBC2";
+	public String WR_OTHER_DESK_USAGE = "Zero KB";
+	public String WR_OTHER_DESK_CLIENTS = "0";
+
 	public WirelessOtherDeskPage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

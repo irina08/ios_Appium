@@ -17,6 +17,7 @@ XCode, Appium, Java, Maven, simulator according properties in the config.propert
 [Appium Installation](https://appium.io/)
 
 4.  Provide or change properties in the config.properties file.  
+Especially path to app file.  
 
 5.  Run tests: mvn clean install 
 

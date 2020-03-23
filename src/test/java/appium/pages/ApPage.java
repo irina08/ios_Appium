@@ -11,6 +11,12 @@ public class ApPage {
 
 	AppiumDriver<MobileElement> driver;
 
+	public String AP_HEADING = "AP";
+	public String AP_MODEL = "MR34";
+	public String AP_SERIAL = "Q2FD-JVAE-348F";
+	public String AP_USAGE = "Zero KB";
+	public String AP_CLIENTS = "0";
+
 	public ApPage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

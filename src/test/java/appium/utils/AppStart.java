@@ -21,35 +21,35 @@ public class AppStart {
     private static AppiumDriver<MobileElement> driver;
 
     static {
-	properties = readConfigFile(Constants.CONFIG_FILE_PATH);
-	appConfig.setPlatformName(properties.getProperty("platformName"));
-	appConfig.setPlatformVersion(properties.getProperty("platformVersion"));
-	appConfig.setDeviceName(properties.getProperty("deviceName"));
-	appConfig.setApp(properties.getProperty("app"));
-	appConfig.setAppiumServer(properties.getProperty("appiumServer"));
-	appConfig.setApiKey(properties.getProperty("apiKey"));
-	appConfig.setTimeout(properties.getProperty("timeout"));
+		properties = readConfigFile(CommonConstants.CONFIG_FILE_PATH);
+		appConfig.setPlatformName(properties.getProperty("platformName"));
+		appConfig.setPlatformVersion(properties.getProperty("platformVersion"));
+		appConfig.setDeviceName(properties.getProperty("deviceName"));
+		appConfig.setApp(properties.getProperty("app"));
+		appConfig.setAppiumServer(properties.getProperty("appiumServer"));
+		appConfig.setApiKey(properties.getProperty("apiKey"));
+		appConfig.setTimeout(properties.getProperty("timeout"));
     }
 
     public static AppiumDriver<MobileElement> startApp() throws MalformedURLException {
-	DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 	    
-	desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, appConfig.getPlatformName());
-	desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, appConfig.getPlatformVersion());
-	desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, appConfig.getDeviceName());
-	desiredCapabilities.setCapability(MobileCapabilityType.APP, appConfig.getApp());
-	desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, appConfig.getTimeout());
-	desiredCapabilities.setCapability(Constants.KEYBOARD_SETTING, false);
+		desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, appConfig.getPlatformName());
+		desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, appConfig.getPlatformVersion());
+		desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, appConfig.getDeviceName());
+		desiredCapabilities.setCapability(MobileCapabilityType.APP, appConfig.getApp());
+		desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, appConfig.getTimeout());
+		desiredCapabilities.setCapability(CommonConstants.KEYBOARD_SETTING, false);
 
-	URL url = new URL(appConfig.getAppiumServer());
+		URL url = new URL(appConfig.getAppiumServer());
 
-	if (appConfig.getPlatformName().equalsIgnoreCase(Constants.IOS_PLATFORM_NAME)) {
-	    desiredCapabilities.setCapability(Constants.AUTOMATION_NAME, Constants.AUTOMATION_VALUE);
-	    driver = new IOSDriver<MobileElement>(url, desiredCapabilities);
-	}
-	driver.manage().timeouts().implicitlyWait(Long.valueOf(appConfig.getTimeout()), TimeUnit.SECONDS);
+		if (appConfig.getPlatformName().equalsIgnoreCase(CommonConstants.IOS_PLATFORM_NAME)) {
+	    	desiredCapabilities.setCapability(CommonConstants.AUTOMATION_NAME, CommonConstants.AUTOMATION_VALUE);
+	    	driver = new IOSDriver<MobileElement>(url, desiredCapabilities);
+		}
+		driver.manage().timeouts().implicitlyWait(Long.valueOf(appConfig.getTimeout()), TimeUnit.SECONDS);
 
-	return driver;
+		return driver;
     }
 
     public static String getAPiKey() {
@@ -61,22 +61,22 @@ public class AppStart {
     }
 	
     public static Properties readConfigFile(String file) {
-	InputStream input = null;
-	Properties properties = new Properties();
-	try {
-	    input = new FileInputStream(file);
-	    properties.load(input);
-	} catch (IOException e) {
-	    e.printStackTrace();		
-	} finally {
-	    if (input != null) {
+		InputStream input = null;
+		Properties properties = new Properties();
 		try {
-		    input.close();
+	    	input = new FileInputStream(file);
+	    	properties.load(input);
 		} catch (IOException e) {
-		    e.printStackTrace();	
+	    	e.printStackTrace();
+		} finally {
+	    	if (input != null) {
+				try {
+		    		input.close();
+				} catch (IOException e) {
+		    		e.printStackTrace();
+				}
+	    	}
 		}
-	    }
-	}
-       return properties;
+		return properties;
     }
 }

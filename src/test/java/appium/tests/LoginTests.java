@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import appium.pages.LoginPage;
+import appium.pages.HomePage;
 import appium.utils.AppStart;
-import appium.utils.Constants;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -37,8 +37,8 @@ public class LoginTests {
 		LoginPage loginFlow = new LoginPage(driver);
 		loginFlow.login(apiKey);
 
-		assertEquals(driver.findElementByXPath(Constants.HOME_NETWORKS_XPATH).getText(),
-				Constants.HOME_AP_TEXT);
+		assertEquals(driver.findElementByXPath(HomePage.HOME_NETWORKS_XPATH).getText(),
+				HomePage.HOME_AP_TEXT);
 	}
 
 	@Test
@@ -46,8 +46,8 @@ public class LoginTests {
 		LoginPage loginFlow = new LoginPage(driver);
 		loginFlow.login("");
 
-		assertEquals(Constants.HOME_NOAP_TEXT, 
-				driver.findElementByXPath(Constants.HOME_NONETWORKS_XPATH).getText());
+		assertEquals(HomePage.HOME_NOAP_TEXT,
+				driver.findElementByXPath(HomePage.HOME_NONETWORKS_XPATH).getText());
 	}
 
 	@Test
@@ -55,8 +55,8 @@ public class LoginTests {
 		LoginPage loginFlow = new LoginPage(driver);
 		loginFlow.login("qwpqwpq123qwp");
 
-		assertEquals(Constants.HOME_NOAP_TEXT, 
-				driver.findElementByXPath(Constants.HOME_NONETWORKS_XPATH).getText());
+		assertEquals(HomePage.HOME_NOAP_TEXT,
+				driver.findElementByXPath(HomePage.HOME_NONETWORKS_XPATH).getText());
 	}
 
 	@AfterMethod

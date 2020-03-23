@@ -30,6 +30,4 @@ public class LoginPage {
 		driver.hideKeyboard();
 		goBtn.click();
 	}
-
-
 }
