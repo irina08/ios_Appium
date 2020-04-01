@@ -22,7 +22,7 @@ public class HomePage {
 	public String WR_NEW_STADIUM_IP = "172.29.6.100";
 
 	public String AP_LABEL = "AP";
-	public String AP_IP = "172.29.6.126";
+	public String AP_IP = "172.29.4.96";
 
 	public String WR_AP1_LABEL = "Wireless AP 1";
 	public String WR_AP1_IP = "172.29.6.107";
@@ -53,7 +53,7 @@ public class HomePage {
 	@iOSXCUITFindBy(xpath = "(//XCUIElementTypeStaticText[@name='name'])[2]")
 	public MobileElement labelMrAp;
 	
-	@iOSXCUITFindBy(accessibility = "172.29.6.126")
+	@iOSXCUITFindBy(accessibility = "172.29.4.96")
 	public MobileElement apiMrAp; 
 
 

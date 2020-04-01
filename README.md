@@ -11,15 +11,18 @@ you want the cloned directory to be made.
 Use command: git clone https://github.com/irina08/ios_Appium or download folder
 
 2.  You need to have in your testing environment already installed  
-XCode, Appium, Java, Maven, simulator according properties in the config.properties file.  
+XCode, Appium, Java, Maven, simulator according properties in the config.properties file,  
+Appium Desktop Client.  
+[Appium Installation](https://appium.io/) 
 
 3.  In this project I use PageObject Pattern with Page Factory. For assertion library - TestNG.   
-[Appium Installation](https://appium.io/)
 
 4.  Provide or change properties in the config.properties file.  
 Especially path to app file.  
 
-5.  Run tests: mvn clean install 
+5.  Start Appium Server using Desktop Appium Client
+
+6.  Run tests: mvn clean install 
 
 ### Test Cases:
 Login Page:  

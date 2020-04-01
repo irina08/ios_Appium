@@ -14,8 +14,8 @@ public class WirelessNewStadiumPage {
 	public String WR_NEW_STADIUM_HEADING = "Wireless New Stadium";
 	public String WR_NEW_STADIUM_MODEL = "MR34";
 	public String WR_NEW_STADIUM_SERIAL = "Q2FD-257W-K29Z";
-	public String WR_NEW_STADIUM_USAGE = "0 KB";
-	public String WR_NEW_STADIUM_CLIENTS = "1";
+	public String WR_NEW_STADIUM_USAGE = "Zero KB";
+	public String WR_NEW_STADIUM_CLIENTS = "0";
 
 	public WirelessNewStadiumPage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
@@ -31,9 +31,9 @@ public class WirelessNewStadiumPage {
 	@iOSXCUITFindBy(accessibility = "Q2FD-257W-K29Z")
 	public MobileElement serialValue;
 	
-	@iOSXCUITFindBy(accessibility = "0 KB")
+	@iOSXCUITFindBy(accessibility = "Zero KB")
 	public MobileElement usageValue;
 	
-	@iOSXCUITFindBy(accessibility = "1")
+	@iOSXCUITFindBy(accessibility = "0")
 	public MobileElement clientsValue;
 }
